@@ -1,0 +1,32 @@
+<html>
+    <title>FlyTo</title>
+    <body>
+         <h3>FLYTO - BRAINLY ( TES )</h3>
+         <br><br>
+         <label for="">Soal</label>
+         <input type="text" id="soal">
+         <br>
+         <br>
+         <label for="">Jawaban</label>
+         <input type="text" id="jawaban">
+         <br>
+         <br>
+         <button onClick="btainly">Upload Soal</button>
+
+         <script>
+             const soale = document.getElementById("soal");
+             const jawabane = document.getElementById("jawaban");
+
+             function brainly(){
+               const xhr = new XMLHttpRequest();
+               xhr.open('GET', 'URL');
+               xhr.onload = () => {
+                 const data = JSON.parse(xhr.response);
+                 const jw = data.jawaban
+               };
+               xhr.send();
+               jawabane.value = jw
+             }
+         </script>
+    </body>
+</html>
